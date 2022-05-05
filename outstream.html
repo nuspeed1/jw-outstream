@@ -82,8 +82,8 @@
                     }
                     })
                     
-                    jwplayer().on("adPlay", function(e,d){
-                        const video = document.getElementsByTagName("video")
+                    jwplayer('jwp-outstream').once("adPlay", function(e,d){
+                        const video = jwplayer('jwp-outstream').getContainer().getElementsByTagName("video");
                         video[0].setAttribute("loop",'')
                     })
                 });
